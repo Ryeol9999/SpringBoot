@@ -1,5 +1,0 @@
-package AOP;
-
-public class LogAspect {
-
-}
