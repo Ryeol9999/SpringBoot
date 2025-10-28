@@ -1,0 +1,20 @@
+@FunctionalInterface
+interface Myfun{
+	void method(int x);
+}
+
+@FunctionalInterface
+interface Myfun2{
+	void method(int x, int y);
+}
+
+
+
+public class Ex04_Lamda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

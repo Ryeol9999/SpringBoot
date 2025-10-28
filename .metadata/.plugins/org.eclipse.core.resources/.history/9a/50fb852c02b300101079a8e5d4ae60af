@@ -1,0 +1,32 @@
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.demo.model.Dept;
+import com.example.demo.service.DeptService;
+
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequiredArgsConstructor
+@RequestMapping("/dept")
+public class DeptController {
+
+	private final DeptService deptService;
+	
+	@GetMapping
+	public String list(Model model) {
+		model.addAttribute("list", deptService.findAll());
+		
+		return "dept/list";
+	}
+	
+	@GetMapping
+	public String addForm(Model model) {
+		model.addAttribute("dept",new Dept());
+		return "dept/add";
+	}
+}

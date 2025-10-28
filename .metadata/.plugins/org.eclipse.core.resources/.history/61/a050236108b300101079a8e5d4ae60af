@@ -1,0 +1,27 @@
+spring.application.name=demo2_jpa
+
+#포트 설정
+server.port=8090
+
+#DB 작업
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521:XE
+spring.datasource.username=springuser
+spring.datasource.password=1004
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+
+#Pool 설정... maximum-pool-size 설정하고싶으면 
+
+
+#JPA 설정
+#객체 매핑 (select 하고 class 구조가 다르다)
+#mybatis 에서는 mapper 작업 (쿼리문)
+#JPA 클래스 가지고 테이블 생성 ....CRUD (함수)까지도
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=true
+spring.jpa.database-platform=org.hibernate.dialect.OracleDialect
+#방언 (데이터베이 설정.. 쿼리 생성된다.)
+
+#Thymeleaf
+#spring.thymeleaf.prefix=classpath:/templates/
+#spring.thymeleaf.suffix=.html
+spring.thymeleaf.encoding=UTF-8

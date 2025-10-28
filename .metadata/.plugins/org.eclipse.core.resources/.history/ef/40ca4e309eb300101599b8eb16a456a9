@@ -1,0 +1,42 @@
+@FunctionalInterface
+interface Myfun{
+	void method(int x);
+}
+
+@FunctionalInterface
+interface Myfun2{
+	int method(int x, int y);
+}
+
+
+
+public class Ex04_Lamda {
+
+	public static void main(String[] args) {
+		Myfun my = new Myfun() {
+			
+			@Override
+			public void method(int x) {
+				System.out.println("param x:" + x);
+				
+			}
+		};
+		my.method(100);
+	
+		/////////////////////
+		//람다식사용
+		Myfun my2 = (x) -> System.out.println("paramda x:" + x);
+		my2.method(500);
+		
+		Myfun2 myfun2 =(x, y) ->{int result = x+y; 
+								return x+y;};
+								
+		Myfun2 myfun3 = (x, y) -> x+y;
+		
+		myfun2.method(100,200);
+		myfun3.method(200,400);
+		
+	}
+	}
+
+}
