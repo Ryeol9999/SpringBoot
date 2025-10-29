@@ -1,0 +1,7 @@
+resource/template/error/안에서 정해진규칙
+
+[에러번호로]페이지 만들면
+400.html
+
+타임리프에서 자동으로 에러페이지 변환
+AccessDeniedException 또는 Http
