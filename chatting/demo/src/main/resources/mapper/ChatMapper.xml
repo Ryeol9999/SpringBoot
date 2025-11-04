@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.mapper.ChatMapper">
+
+    <!-- 전체 메시지 조회 -->
+    <select id="findAll" resultType="com.example.demo.domain.ChatMessage">
+        SELECT id, room_id, sender, message, send_time
+        FROM chat_message
+        ORDER BY send_time ASC
+    </select>
+
+    <!-- 특정 채팅방 메시지 조회 -->
+    <select id="findByRoomId" parameterType="string" resultType="com.example.demo.domain.ChatMessage">
+        SELECT id, room_id, sender, message, send_time
+        FROM chat_message
+        WHERE room_id = #{roomId}
+        ORDER BY send_time ASC
+    </select>
+
+    <!-- 메시지 저장 -->
+    <insert id="insertMessage" parameterType="com.example.demo.domain.ChatMessage" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO chat_message (room_id, sender, message, send_time)
+        VALUES (#{roomId}, #{sender}, #{message}, NOW())
+    </insert>
+
+</mapper>
