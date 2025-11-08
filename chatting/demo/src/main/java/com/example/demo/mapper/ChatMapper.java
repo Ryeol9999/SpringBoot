@@ -11,8 +11,12 @@ public interface ChatMapper {
     List<ChatMessage> findAll();
 
     // 특정 방 메시지 조회
-    List<ChatMessage> findByRoomId(String roomId);
+    List<ChatMessage> findByRoomId(Long roomId);
 
     // 메시지 저장
     int insertMessage(ChatMessage message);
+
+    //특정방 메세지 전부 삭제(방삭제시 발동)
+    int deleteMessagesByRoomId(Long roomId);
+
 }

@@ -19,7 +19,7 @@ public class ChatService {
     }
 
     // 특정 채팅방 메시지 조회
-    public List<ChatMessage> getMessagesByRoomId(String roomId) {
+    public List<ChatMessage> getMessagesByRoomId(Long roomId) {
         return chatMapper.findByRoomId(roomId);
     }
 
