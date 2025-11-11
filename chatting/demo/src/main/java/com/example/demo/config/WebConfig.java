@@ -14,7 +14,7 @@ public class WebConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // ✅ 모든 REST 경로 허용
-                        .allowedOrigins("http://localhost:5173","http://192.168.2.22:5173") // ✅ React 개발 서버 주소
+                        .allowedOrigins("http://localhost:5173","http://192.168.2.57:5173") // ✅ React 개발 서버 주소
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
